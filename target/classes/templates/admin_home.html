@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+	<title>Monster Hunter Assistant | ADMIN</title>
+</head>
+<body>
+	<div th:replace="general :: header"></div>
+	
+	<main>
+		<article>
+			<h1><span>Admin Page</span></h1>
+			<ul class="nav" role="navigation">
+	           <li class="dropdown">
+	             <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Admin Access<b class="caret"></b></a>
+	             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+	               <!--<li><a th:href="@{/admin/quest}">Modify Quests</a></li> -->
+	               <li><a th:href="@{/admin/monster}">Modify Monsters</a></li>
+	             </ul>
+	           </li>
+	         </ul>
+		</article>
+	</main>
+	
+	<script type="text/javascript"
+		th:src="@{/javascript.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>

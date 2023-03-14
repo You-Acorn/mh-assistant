@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+	<title>Monster Hunter Assistant</title>
+</head>
+<body>
+	<div th:replace="general :: header"></div>
+	
+	<main>
+		<article>
+		<br>
+			<p>There is no matching value to that request</p>
+		</article>
+	</main>
+	
+	<script type="text/javascript"
+		th:src="@{/javascript.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>

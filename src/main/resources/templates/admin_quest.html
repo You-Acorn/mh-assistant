@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+	<title>Monster Hunter Assistant | ADMIN</title>
+</head>
+<body>
+	<div th:replace="general :: header"></div>
+	
+	<main>
+		<article>
+			<h1><span>Modify Quests</span></h1>
+			<div th:if="${param.success}">
+              <div class="alert alert-info">Quest successfully Modified!</div>
+           </div>
+           <div th:if="${param.fail}">
+              <div class="alert alert-info">Quest Failed to Modify</div>
+           </div>
+			<h3>Update Quest</h3>
+			<form id="Update" th:action="@{/admin/quest/update}" th:object="${questToModify}" method="PATCH">
+			    <div>
+			    	<label>Id</label>
+			    	<input type="number" th:field="*{id}" class="form-control"/>
+			    	<br>
+			    	<label>Name</label>
+			    	<input type="text" th:field="*{name}" class="form-control"/>
+			    	<br>
+			    	<label>Rank</label>
+			    	<input type="number" th:field="*{questRank}" class="form-control"/>
+			    	<br>
+			    	<label>Quest Type</label>
+			    	<input type="text" th:field="*{questType}" class="form-control"/>
+			    	<br>
+			    	<label>Region</label>
+			    	<input type="text" th:field="*{region}" class="form-control"/>
+			    	<br>
+			    	<label>Reward</label>
+			    	<input type="number" th:field="*{reward}" class="form-control"/>
+			    	<br>
+			    	<label>Monsters</label>
+			    	<input type="text" th:field="*{monsters}" class="form-control"/>
+			    	<br>
+			        <input type="submit" value="Update This Quest" class="btn btn-red"/>
+			    </div>
+			</form>
+			<hr>
+			<h3>Add Quest</h3>
+			<form id="Add" th:action="@{/admin/quest/add}" th:object="${questToModify}" method="POST">
+			    <div>
+			    	<label>Id</label>
+			    	<input type="number" th:field="*{id}" class="form-control"/>
+			    	<br>
+			    	<label>Name</label>
+			    	<input type="text" th:field="*{name}" class="form-control"/>
+			    	<br>
+			    	<label>Rank</label>
+			    	<input type="number" th:field="*{questRank}" class="form-control"/>
+			    	<br>
+			    	<label>Quest Type</label>
+			    	<input type="text" th:field="*{questType}" class="form-control"/>
+			    	<br>
+			    	<label>Region</label>
+			    	<input type="text" th:field="*{region}" class="form-control"/>
+			    	<br>
+			    	<label>Reward</label>
+			    	<input type="number" th:field="*{reward}" class="form-control"/>
+			    	<br>
+			    	<label>Monsters</label>
+			    	<input type="text" th:field="*{monsters}" class="form-control"/>
+			    	<br>
+			        <input type="submit" value="Add This Quest" class="btn btn-red"/>
+			    </div>
+			</form>
+			<hr>
+			<h3>Delete Quest</h3>
+			<form id="Delete" th:action="@{/admin/quest/delete}" th:object="${questToModify}" method="DELETE">
+			    <div>
+			    	<label>Quest Id to Delete</label>
+			    	<input type="number" th:field="*{id}" class="form-control" required/>
+			    	<br>
+			        <input type="submit" value="Delete This Quest" class="btn btn-red"/>
+			    </div>
+			</form>
+			
+		</article>
+		
+		<section>
+		</section>
+	</main>
+	
+	<script type="text/javascript"
+		th:src="@{/javascript.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+	<title>Monster Hunter Assistant</title>
+</head>
+<body>
+	<div th:replace="general :: header"></div>
+
+	<main>
+		<article>
+			<h1><span>Monster Hunter Assistant</span></h1>
+			<p class="text-center">Welcome to the Monster Hunter Assistant!</p>
+			<p class="text-center">Click the about to find out what we're all about here</p>
+			<p class="text-center">or login and start clicking around to get started.</p>
+		</article>
+	</main>
+	
+	<script type="text/javascript"
+		th:src="@{/javascript.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>

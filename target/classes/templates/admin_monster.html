@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+	<title>Monster Hunter Assistant | ADMIN</title>
+</head>
+<body>
+	<div th:replace="general :: header"></div>
+	
+	<main>
+		<article>
+			<h1><span>Modify Monsters</span></h1>
+			<div th:if="${param.success}">
+              <div class="alert alert-info">Monster successfully Modified!</div>
+           </div>
+           <div th:if="${param.fail}">
+              <div class="alert alert-info">Monster Failed to Modify</div>
+           </div>
+			<h3>Update Monster</h3>
+			<form id="Update" th:action="@{/admin/monster/update}" th:object="${monsterToModify}" method="PATCH">
+			    <div>
+			    	<label>Name</label>
+			    	<input type="text" th:field="*{monster}" class="form-control"/>
+			    	<br>
+			    	<label>Threat Level</label>
+			    	<input type="number" th:field="*{threatLevel}" class="form-control"/>
+			    	<br>
+			    	<label>Attack Attribute</label>
+			    	<input type="text" th:field="*{attackAttribute}" class="form-control"/>
+			    	<br>
+			    	<label>Weapon Vulnerability (Slash, Blunt, etc.)</label>
+			    	<input type="text" th:field="*{weaponVulnerability}" class="form-control"/>
+			    	<br>
+			    	<label>Attribute Weakness (Blast, Fire, etc.)</label>
+			    	<input type="text" th:field="*{attributeWeakness}" class="form-control"/>
+			    	<br>
+			        <input type="submit" value="Update This Monster" class="btn btn-red"/>
+			    </div>
+			</form>
+			<hr>
+			<h3>Add Monster</h3>
+			<form id="Add" th:action="@{/admin/monster/add}" th:object="${monsterToModify}" method="POST">
+			    <div>
+			    	<label>Name</label>
+			    	<input type="text" th:field="*{monster}" class="form-control"/>
+			    	<br>
+			    	<label>Threat Level</label>
+			    	<input type="number" th:field="*{threatLevel}" class="form-control"/>
+			    	<br>
+			    	<label>Attack Attribute</label>
+			    	<input type="text" th:field="*{attackAttribute}" class="form-control"/>
+			    	<br>
+			    	<label>Weapon Vulnerability (Slash, Blunt, etc.)</label>
+			    	<input type="text" th:field="*{weaponVulnerability}" class="form-control"/>
+			    	<br>
+			    	<label>Attribute Weakness (Blast, Fire, etc.)</label>
+			    	<input type="text" th:field="*{attributeWeakness}" class="form-control"/>
+			    	<br>
+			        <input type="submit" value="Add This Monster" class="btn btn-red"/>
+			    </div>
+			</form>
+			<hr>
+			<h3>Delete Monster</h3>
+			<form id="Delete" th:action="@{/admin/monster/delete}" th:object="${monsterToModify}" method="DELETE">
+			    <div>
+			    	<label>Monster Name to Delete</label>
+			    	<input type="text" th:field="*{monster}" class="form-control" required/>
+			    	<br>
+			        <input type="submit" value="Delete This Monster" class="btn btn-red"/>
+			    </div>
+			</form>
+		</article>
+	</main>
+	
+	<script type="text/javascript"
+		th:src="@{/javascript.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>

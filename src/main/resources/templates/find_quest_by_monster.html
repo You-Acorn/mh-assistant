@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+	<title>Monster Hunter Assistant</title>
+</head>
+<body>
+	<div th:replace="general :: header"></div>
+	
+	<main>
+		<article>
+			<h1><span>Identify a monster to fight</span></h1>
+			<form id="byMonster" th:action="@{/findQuestsByMonster/addmonster}" th:object="${chosenMonster}" method="GET">
+			    <div>
+			    	<select th:field="*{monster}" class="form-select">
+  						<option th:each="monster : ${allMonsters}" th:value="${monster.monster}">[[${monster.monster}]]</option>
+			    	</select>
+			    	
+			    	<br><br>
+			        <input type="submit" value="Find quest!" class="btn btn-red"/>
+			    </div>
+			</form>
+		</article>
+		
+		<section>
+		</section>
+	</main>
+	
+	<script type="text/javascript"
+		th:src="@{/javascript.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>

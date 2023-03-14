@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+</head>
+<body>
+
+	<header th:fragment="header">
+	 <nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">				
+				<a id="title" class="navbar-brand" href="#" th:href="@{/}">Monster Hunter Assistant</a>
+				<a class="navbar-brand" href="#" th:href="@{/findQuests}">Find Quests</a>
+				<a class="navbar-brand" href="#" th:href="@{/findmonster}">Find Monster</a>
+				<a class="navbar-brand" href="#" th:href="@{/about}">About</a>		
+				<a sec:authorize="isAnonymous()" class="navbar-brand" href="#" th:href="@{/login}">Login</a>		
+				<a sec:authorize="isAuthenticated()" class="navbar-brand" href="#" th:href="@{/logout}">Logout</a>	
+				<a sec:authorize="hasAnyAuthority('ADMIN')" class="navbar-brand" href="#" th:href="@{/admin}">Admin Page</a>	
+			</div>
+		</div>
+	</nav>
+	<br>
+	<br>
+	</header>
+	
+	<script type="text/javascript"
+		th:src="@{/javascript.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+</body>
+
+</html>
